@@ -1,0 +1,21 @@
+// Last updated: 9/12/2026, 2:15:03 PM
+class Solution {
+    public boolean checkDivisibility(int n) {
+        int temp = n;
+        int sum = 0;
+        int product = 1;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+
+            sum += digit;
+            product *= digit;
+
+            temp /= 10;
+        }
+
+        int total = sum + product;
+
+        return n % total == 0;
+    }
+}
